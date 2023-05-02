@@ -135,6 +135,7 @@ def list_late():
     list_late = Toplevel()
     list_late.title("Adding a new book")
     list_late.geometry("600x500")
+
     #print("Listing the Book_Loans that were returned late and how many days they were late")
 
 
