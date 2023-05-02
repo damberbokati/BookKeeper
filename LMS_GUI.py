@@ -125,11 +125,17 @@ def add_book():
 
 # function to list the number of copies loaned out per branch
 def list_copies():
-    print("Listing the number of copies loaned out per branch")
+    list_copies = Toplevel()
+    list_copies.title("Adding a new book")
+    list_copies.geometry("600x500")
+    #print("Listing the number of copies loaned out per branch")
 
 # function to list the Book_Loans that were returned late and how many days they were late
 def list_late():
-    print("Listing the Book_Loans that were returned late and how many days they were late")
+    list_late = Toplevel()
+    list_late.title("Adding a new book")
+    list_late.geometry("600x500")
+    #print("Listing the Book_Loans that were returned late and how many days they were late")
 
 
 
