@@ -113,12 +113,15 @@ def add_borrower():
     add_borow = Toplevel()
     add_borow.title("Adding a new borrower")
     add_borow.geometry("600x500")
-    # print("Adding a new borrower")
+    #print("Adding a new borrower")
 
 
 # function to add a new book
 def add_book():
-    print("Adding a new book")
+    add_book = Toplevel()
+    add_book.title("Adding a new book")
+    add_book.geometry("600x500")
+    #print("Adding a new book")
 
 # function to list the number of copies loaned out per branch
 def list_copies():
