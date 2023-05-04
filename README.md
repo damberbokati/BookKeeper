@@ -1,6 +1,6 @@
 # Library-Management-System
 
-## HONOR CODE: 
+## HONOR CODE:
  
 I pledge, in my honor, to uphold UT Arlington's tradition of academic integrity, a tradition that values hard work and honest effort in the pursuit of academic excellence. 
  
@@ -10,15 +10,13 @@ I promise that I will submit only work that I personally create or that I contri
 ### Damber Bokati, Diwas Sapkota
 
 
-
-
 ## TASK 1: Execute the following queries on the LMS database tables: 
 
  
-### Query 1: Add an extra column ‘Late’ to the Book_Loan table. Values will be 0-for non-late returns, and 1-for late returns. Then update the ‘Late’ column with '1' for all records that have a return date later than the due date and with '0' for those were returned on time. 
+**Query 1: Add an extra column ‘Late’ to the Book_Loan table. Values will be 0-for non-late returns, and 1-for late returns. Then update the ‘Late’ column with '1' for all records that have a return date later than the due date and with '0' for those were returned on time.**
 Answer: 
  
-Add an extra column ‘Late’ 
+`Add an extra column ‘Late’ 
 ALTER TABLE BOOK_LOANS 
 ADD Late INTEGER; 
  
@@ -27,10 +25,10 @@ UPDATE BOOK_LOANS
 SET LATE = CASE 
 WHEN Returned_date > Due_date THEN 1 
 ELSE 0 
-END; 
+END; `
 
 
-### Query 2: Add an extra column ‘LateFee’ to the Library_Branch table, decide late fee per day for each branch and update that column. 
+**Query 2: Add an extra column ‘LateFee’ to the Library_Branch table, decide late fee per day for each branch and update that column. **
 Answer: 
  
 Add and extra column ‘LateFee’ to Library_Branch
