@@ -112,6 +112,7 @@ def checkout_book():
 
 # function to add a new borrower
 def add_borrower():
+
     print("Adding a new borrower")
 
     # create a window
@@ -208,8 +209,7 @@ def add_book():
     w5.mainloop()
 
 
-# function to list the number of copies loan
-# ed out per branch
+# function to list the number of copies loaned out per branch
 def list_copies():
     print("Listing the number of copies loaned out per branch")
 
