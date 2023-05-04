@@ -264,7 +264,7 @@ Upon pressing Submit, a screen with detailed information of all the loaned-out b
 
 **6. The fifth requirement is to return the view’s results by applying the following criteria:**
 
-   **a. List for every borrower the ID, name, and if there is any lateFee balance. The user has the right to search either by a borrower ID, name, part of the name, or to run the query with no filters/criteria. The amount needs to be in US dollars. For borrowers with zero (0) or NULL balance, you need to return zero dollars ($0.00). Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the balance amount. Make sure that you return all records. Submit your editable SQL query that your code executes.**  
+   a. List for every borrower the ID, name, and if there is any lateFee balance. The user has the right to search either by a borrower ID, name, part of the name, or to run the query with no filters/criteria. The amount needs to be in US dollars. For borrowers with zero (0) or NULL balance, you need to return zero dollars ($0.00). Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the balance amount. Make sure that you return all records. Submit your editable SQL query that your code executes.  
  
 
     query = """
@@ -296,7 +296,7 @@ The user is prompted for the following information: Card_no, or Name, or Part of
 Upon pressing Submit button, a screen with detailed information will be displayed.
 
 
-  **b. List book information in the view. The user has the right either to search by the book id, books title, part of book title or to run the query with no filters/criteria. The late fee amount needs to be in US dollars. The late fee price amount needs to have two decimals as well as the dollar ‘$’ sign. For books that do not have any late fee amount, you need to substitute the NULL value with a ‘Non-Applicable’ text. Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the highest late fee remaining. Submit your editable SQL query that your code executes.**
+  b. List book information in the view. The user has the right either to search by the book id, books title, part of book title or to run the query with no filters/criteria. The late fee amount needs to be in US dollars. The late fee price amount needs to have two decimals as well as the dollar ‘$’ sign. For books that do not have any late fee amount, you need to substitute the NULL value with a ‘Non-Applicable’ text. Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the highest late fee remaining. Submit your editable SQL query that your code executes.
 
 
     query = """
