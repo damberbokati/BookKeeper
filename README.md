@@ -30,7 +30,7 @@ Update Late with ‘1’ for all the records that have return date later than th
     END;
 
 
-**Query 2: Add an extra column ‘LateFee’ to the Library_Branch table, decide late fee per day for each branch and update that column. **
+**Query 2: Add an extra column ‘LateFee’ to the Library_Branch table, decide late fee per day for each branch and update that column.**
 Answer: 
  
 Add and extra column ‘LateFee’ to Library_Branch
@@ -51,19 +51,19 @@ Add and extra column ‘LateFee’ to Library_Branch
     END; 
 
 
-**Query 3: Create a view vBookLoanInfo that retrieves all information per book loan. The view should have the following attributes:
+**Query 3: Create a view vBookLoanInfo that retrieves all information per book loan. The view should have the following attributes:**
 
-Card_No, 
-Borrower Name 
-Date_Out, 
-Due_Date, 
-Returned_date 
-Total Days of book loaned out as 'TotalDays'– you need to change weeks to 	days
-Book Title 
-Number of days later return – if returned before or on due_date place zero 
-Branch ID 
-Total Late Fee Balance 'LateFeeBalance' – If the book was not retuned late 
-than fee = ‘0’ **
+*Card_No, 
+*Borrower Name 
+*Date_Out, 
+*Due_Date, 
+*Returned_date 
+*Total Days of book loaned out as 'TotalDays'– you need to change weeks to days
+*Book Title 
+*Number of days later return – if returned before or on due_date place zero 
+*Branch ID 
+*Total Late Fee Balance 'LateFeeBalance' – If the book was not retuned late 
+ than fee = ‘0’
 
 Answer:  
 
