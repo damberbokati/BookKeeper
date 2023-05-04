@@ -101,7 +101,7 @@ Answer:
 **Requirements:**  
 
 
-1. User checks out a book, add it to Book_Loan, the number of copies needs to be updated in the Book_Copies table. Show the output of the updated Book_Copies. 
+**1. User checks out a book, add it to Book_Loan, the number of copies needs to be updated in the Book_Copies table. Show the output of the updated Book_Copies.**
 
 
 Add book to the BOOK_LOAN 
@@ -145,7 +145,7 @@ Upon hitting Submit in above window, a screen with updated Book_Copies will be d
 
 
 
-2. Add information about a new Borrower. Do not provide the CardNo in your query. Output the card number as if you are giving a new library card. Submit your editable SQL query that your code executes. 
+**2. Add information about a new Borrower. Do not provide the CardNo in your query. Output the card number as if you are giving a new library card. Submit your editable SQL query that your code executes.**
  
 Add a new Borrower 
 
@@ -181,7 +181,7 @@ Upon pressing Submit, a screen with Card_no assigned to the new Borrower will be
 
 
  
-3. Add a new Book with publisher (use can use a publisher that already exists) and author information to all 5 branches with 5 copies for each branch. Submit your editable SQL query that your code executes.  
+**3. Add a new Book with publisher (use can use a publisher that already exists) and author information to all 5 branches with 5 copies for each branch. Submit your editable SQL query that your code executes.**
  
 Add a new book 
  
@@ -211,8 +211,8 @@ Upon pressing Submit button, a new screen with updated Book Table will be displa
 
 
 
-4. Given a book title list the number of copies loaned out per branch. 
- 
+**4. Given a book title list the number of copies loaned out per branch.** 
+
 Number of copies loaned out per branch
 
     submit_cur.execute("SELECT BOOK.Title, LIBRARY_BRANCH.Branch_Name, COUNT(BOOK_LOANS.Book_Id) FROM LIBRARY_BRANCH LEFT JOIN BOOK_LOANS ON LIBRARY_BRANCH.Branch_Id = BOOK_LOANS.Branch_Id NATURAL JOIN BOOK WHERE BOOK.Book_Id = :book_id AND BOOK_LOANS.Returned_date IS NULL GROUP BY LIBRARY_BRANCH.Branch_Name", 
@@ -230,8 +230,8 @@ Upon pressing Submit button, a screen with information about he specified book w
 
 
 
-5. Given any due date range list the Book_Loans that were returned late and how many days they were late. Submit your editable SQL queries that your code executes. 
- 
+**5. Given any due date range list the Book_Loans that were returned late and how many days they were late. Submit your editable SQL queries that your code executes.** 
+
 Given any due date range list the Book_Loans that were returned late and how many days they were late.
 
 querry = query = """
@@ -264,31 +264,31 @@ The user will be prompted for start and end date. Then the provided dates are us
 Upon pressing Submit, a screen with detailed information of all the loaned-out books will be displayed.
 
 
-6. The fifth requirement is to return the view’s results by applying the following criteria: 
-        a. List for every borrower the ID, name, and if there is any lateFee balance. The user has the right to search either by a borrower ID, name, part of the name, or to run the query with no filters/criteria. The amount needs to be in US dollars. For borrowers with zero (0) or NULL balance, you need to return zero dollars ($0.00). Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the balance amount. Make sure that you return all records. Submit your editable SQL query that your code executes.  
+**6. The fifth requirement is to return the view’s results by applying the following criteria:**
+
+   **a. List for every borrower the ID, name, and if there is any lateFee balance. The user has the right to search either by a borrower ID, name, part of the name, or to run the query with no filters/criteria. The amount needs to be in US dollars. For borrowers with zero (0) or NULL balance, you need to return zero dollars ($0.00). Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the balance amount. Make sure that you return all records. Submit your editable SQL query that your code executes.**  
  
 
-        query = """
-            SELECT 
-                Card_No, 
-                BorrowerName, 
-                CASE
-                    WHEN LateFeeBalance IS NULL OR LateFeeBalance = 0 THEN '$0.00'
-                    ELSE '$' || printf("%.2f", LateFeeBalance)
-                END AS LateFeeBalance
-            FROM 
-                vBookLoanInfo
-            WHERE 
-                (:search_string IS NULL 
-                OR :search_string = '' 
-                OR 
-                Card_No LIKE '%' || :search_string || '%' OR 
-                BorrowerName LIKE '%' || :search_string || '%')
-            ORDER BY 
-                LateFeeBalance DESC;
-            """
-            submit_cur.execute(query, {'search_string': borrower_info})
-
+    query = """
+        SELECT 
+            Card_No, 
+            BorrowerName, 
+            CASE
+                WHEN LateFeeBalance IS NULL OR LateFeeBalance = 0 THEN '$0.00'
+                ELSE '$' || printf("%.2f", LateFeeBalance)
+            END AS LateFeeBalance
+        FROM 
+            vBookLoanInfo
+        WHERE 
+            (:search_string IS NULL 
+            OR :search_string = '' 
+            OR 
+            Card_No LIKE '%' || :search_string || '%' OR 
+            BorrowerName LIKE '%' || :search_string || '%')
+        ORDER BY 
+            LateFeeBalance DESC;
+        """
+        submit_cur.execute(query, {'search_string': borrower_info})
 
 
 Result
@@ -298,31 +298,31 @@ The user is prompted for the following information: Card_no, or Name, or Part of
 Upon pressing Submit button, a screen with detailed information will be displayed.
 
 
-        b. List book information in the view. The user has the right either to search by the book id, books title, part of book title or to run the query with no filters/criteria. The late fee amount needs to be in US dollars. The late fee price amount needs to have two decimals as well as the dollar ‘$’ sign. For books that do not have any late fee amount, you need to substitute the NULL value with a ‘Non-Applicable’ text. Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the highest late fee remaining. Submit your editable SQL query that your code executes.  
+  **b. List book information in the view. The user has the right either to search by the book id, books title, part of book title or to run the query with no filters/criteria. The late fee amount needs to be in US dollars. The late fee price amount needs to have two decimals as well as the dollar ‘$’ sign. For books that do not have any late fee amount, you need to substitute the NULL value with a ‘Non-Applicable’ text. Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the highest late fee remaining. Submit your editable SQL query that your code executes.**
 
 
-        query = """
-            SELECT 
-            b.Book_Id, 
-            b.Title, 
-            v.TotalDays,
-            v.BorrowerName,  
-            CASE 
-                WHEN v.LateFeeBalance IS NULL THEN 'Non-Applicable'
-                ELSE '$' || printf("%.2f", v.LateFeeBalance)
-            END AS LateFeeAmount
-            FROM 
-                vBookLoanInfo v 
-                JOIN BOOK b ON v.BookTitle = b.Title
-            WHERE 
-                b.Title LIKE '%' || :search_input || '%' 
-                OR b.Book_Id = :search_input
-            ORDER BY 
-                v.LateFeeBalance DESC NULLS LAST
-            """
+    query = """
+        SELECT 
+        b.Book_Id, 
+        b.Title, 
+        v.TotalDays,
+        v.BorrowerName,  
+        CASE 
+            WHEN v.LateFeeBalance IS NULL THEN 'Non-Applicable'
+            ELSE '$' || printf("%.2f", v.LateFeeBalance)
+        END AS LateFeeAmount
+        FROM 
+            vBookLoanInfo v 
+            JOIN BOOK b ON v.BookTitle = b.Title
+        WHERE 
+            b.Title LIKE '%' || :search_input || '%' 
+            OR b.Book_Id = :search_input
+        ORDER BY 
+            v.LateFeeBalance DESC NULLS LAST
+        """
 
 
-            submit_cur.execute(query, {'search_input': book_info})
+        submit_cur.execute(query, {'search_input': book_info})
 
 
 	
