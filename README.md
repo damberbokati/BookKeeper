@@ -49,7 +49,8 @@ ELSE 0
 END; 
 
 
-### Query 3: Create a view vBookLoanInfo that retrieves all information per book loan. The view should have the following attributes: 
+**Query 3: Create a view vBookLoanInfo that retrieves all information per book loan. The view should have the following attributes:
+
 Card_No, 
 Borrower Name 
 Date_Out, 
@@ -60,8 +61,7 @@ Book Title
 Number of days later return – if returned before or on due_date place zero 
 Branch ID 
 Total Late Fee Balance 'LateFeeBalance' – If the book was not retuned late 
-than fee = ‘0’ 
-
+than fee = ‘0’ **
 
 Answer:  
 
@@ -94,10 +94,11 @@ JOIN LIBRARY_BRANCH lb ON bl.Branch_Id = lb.Branch_Id;
 ## LMS Application: 
 
 
-### Create a simple and friendly GUI interface that would be able to perform the following tasks. You may use JAVA programming using JDBC, or C/C++/C# programming with ODBC/Oracle or Python programming or PHP/MySQL or other programming languages to develop a GUI interface. For each query, you need to provide some info to the user about the query's purpose. The user will have to type or select the query’s input parameters and post the question to your program. The program needs to return all result’s rows. 
- 
-Requirements: 
-  
+**Create a simple and friendly GUI interface that would be able to perform the following tasks. You may use JAVA programming using JDBC, or C/C++/C# programming with ODBC/Oracle or Python programming or PHP/MySQL or other programming languages to develop a GUI interface. For each query, you need to provide some info to the user about the query's purpose. The user will have to type or select the query’s input parameters and post the question to your program. The program needs to return all result’s rows. 
+** 
+
+**Requirements:**  
+
 User checks out a book, add it to Book_Loan, the number of copies needs to be updated in the Book_Copies table. Show the output of the updated Book_Copies. 
 
 
@@ -212,27 +213,7 @@ for branch_id in range(1, 6):
 Result: The use is prompted for the following information: Title, Author, Publisher. Then these informations are used to add a new book to BOOK table and Add copies to all branches.
 
 
-
-
-
 Upon pressing Submit button, a new screen with updated Book Table will be displayed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Given a book title list the number of copies loaned out per branch. 
@@ -250,41 +231,7 @@ The user is prompted for the following information: Book Title. Then the query i
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Upon pressing Submit button, a screen with information about he specified book will be displayed. If the specified books are not being loaned out from any branch, no output will be displayed.
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Given any due date range list the Book_Loans that were returned late and how many days they were late. Submit your editable SQL queries that your code executes. 
@@ -317,59 +264,12 @@ Result
 The user will be prompted for start and end date. Then the provided dates are used to run the query.
 
 
-
-
-
 Upon pressing Submit, a screen with detailed information of all the loaned-out books will be displayed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 The fifth requirement is to return the view’s results by applying the following criteria: 
 List for every borrower the ID, name, and if there is any lateFee balance. The user has the right to search either by a borrower ID, name, part of the name, or to run the query with no filters/criteria. The amount needs to be in US dollars. For borrowers with zero (0) or NULL balance, you need to return zero dollars ($0.00). Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the balance amount. Make sure that you return all records. Submit your editable SQL query that your code executes.  
  
-
 
 query = """
     SELECT 
@@ -393,37 +293,12 @@ query = """
     submit_cur.execute(query, {'search_string': borrower_info})
 
 
- 
- 
- 
- 
-
 
 Result
 The user is prompted for the following information: Card_no, or Name, or Part of their name. Then based on the information provided a query to display a detailed information about their books they have checkout and late fees will be displayed.
 
 
-
-
-
-
-
-
-
-
-
-
-
 Upon pressing Submit button, a screen with detailed information will be displayed.
-
-
-
-
-
-
-
-
-
 
 
 List book information in the view. The user has the right either to search by the book id, books title, part of book title or to run the query with no filters/criteria. The late fee amount needs to be in US dollars. The late fee price amount needs to have two decimals as well as the dollar ‘$’ sign. For books that do not have any late fee amount, you need to substitute the NULL value with a ‘Non-Applicable’ text. Make sure that your query returns meaningful attribute names. In the case that the user decides not to provide any filters, order the results based on the highest late fee remaining. Submit your editable SQL query that your code executes.  
@@ -459,29 +334,9 @@ Result
 The user will be prompted for the following information: Book_id, Title of the book, or Par of the book title. Using the provided info above query is run.
 
 
-
-
-
-
-
-
-
 Upon pressing Submit button, a new screen with the detailed book information will be displayed.
 
 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
 This is the home Screen of the Library Management System
-
 
 
