@@ -234,7 +234,6 @@ Upon pressing Submit button, a screen with information about he specified book w
 
 Given any due date range list the Book_Loans that were returned late and how many days they were late.
 
-`querry = query = """
     SELECT 
         BOOK_LOANS.Book_Id,
         BOOK_LOANS.Card_No,
@@ -251,8 +250,8 @@ Given any due date range list the Book_Loans that were returned late and how man
         AND BOOK_LOANS.Returned_date > BOOK_LOANS.Due_Date
     ORDER BY 
         Days_Late DESC;
-    """
-    submit_cur.execute(query, {'start_date': due_date1, 'end_date': due_date2})`
+    
+    submit_cur.execute(query, {'start_date': due_date1, 'end_date': due_date2})
 
 Result
 
