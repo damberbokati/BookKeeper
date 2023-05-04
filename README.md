@@ -12,7 +12,6 @@ I promise that I will submit only work that I personally create or that I contri
 
  
 **Query 1: Add an extra column ‘Late’ to the Book_Loan table. Values will be 0-for non-late returns, and 1-for late returns. Then update the ‘Late’ column with '1' for all records that have a return date later than the due date and with '0' for those were returned on time.**
-Answer: 
  
 Add an extra column ‘Late’ 
 
@@ -29,7 +28,6 @@ Update Late with ‘1’ for all the records that have return date later than th
 
 
 **Query 2: Add an extra column ‘LateFee’ to the Library_Branch table, decide late fee per day for each branch and update that column.**
-Answer: 
  
 Add and extra column ‘LateFee’ to Library_Branch
 
@@ -63,7 +61,6 @@ Add and extra column ‘LateFee’ to Library_Branch
 *Total Late Fee Balance 'LateFeeBalance' – If the book was not retuned late 
  than fee = ‘0’
 
-Answer:  
 
     CREATE VIEW vBookLoanInfo AS 
     SELECT bl.Card_No, b.Name AS BorrowerName, bl.Date_Out, bl.Due_Date, bl.Returned_date, 
